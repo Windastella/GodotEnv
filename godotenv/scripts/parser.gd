@@ -19,5 +19,6 @@ func parse(filename):
 	while !file.eof_reached():
 		line = file.get_line();
 		var o = line.split("=");
-		env[o[0]] = o[1].lstrip("\"").rstrip("\"");
+		if o.size() == 2:
+			env[o[0]] = o[1].lstrip("\"").rstrip("\"");
 	return env;
