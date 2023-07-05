@@ -3,18 +3,22 @@
 # Email: nik96mirza[at]gmail.com
 extends Node
 
-onready var parser = GodotEnv_Parser.new();
 var env = {};
+
+@onready var parser = GodotEnvParser.new();
+
 
 func _ready():
 	env = parser.parse("res://.env");
-	
-func get(name):
+
+
+func get_value(valuename: String):
 	# prioritized os environment variable
-	if(OS.has_environment(name)):
-		return OS.get_environment(name);
-		
-	if(env.has(name)):
-		return env[name];
+	if(OS.has_environment(valuename)):
+		return OS.get_environment(valuename);
+
+	if(env.has(valuename)):
+		return env[valuename];
+
 	# return empty
 	return "";

@@ -8,4 +8,4 @@ Add `/godotenv/scripts/env.gd` to Autoloader.
 
 Retrieve Environment Variable by
 
-`var env_var = get_node("/root/env").get("ENV_VAR")`
+`var env_var = get_node("/root/env").get_value("ENV_VAR")`
