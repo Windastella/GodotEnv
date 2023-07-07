@@ -6,6 +6,6 @@ A simple implementation of DotEnv. Allow usage of .env file in godot. Also retri
 
 Add `/godotenv/scripts/env.gd` to Autoloader.
 
-Retrieve Environment Variable by
+If you left the default name of you script in the Autoloader you can retrieve the Environment Variable by
 
-`var env_var = get_node("/root/env").get("ENV_VAR")`
+`Env.get_value("ENV_VAR")`
